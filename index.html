@@ -3,9 +3,151 @@
         李戌冬小组官网
     </title>
     <link rel="icon" href="https://rawcdn.githack.com/lxdxz/lxdxz.github.io/a435104487d8a176613cd03cb414c634a2a7e0c5/lxdxz.ico" type="image/x-icon">
-    <body bgcolor="#1DFFCF">
+    <body bgcolor="#7fffd4">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-        <p>
+        <script language="javascript">alert('欢迎来到LXDXZ官方网站！lxdxz.github.io。若想访问六四班网站，https://github.com/lxdxz/lxdxz.github.io/blob/master/2013(4).html')</script>
+        <div id="newsContent"><embed src="http://www.zzsky.cn/flash/flash/200951029516379.swf" type="application/x-shockwave-flash" width="550" height="400" quality="high" /></div>
+        <script language="JavaScript">
+        ns=(document.layers)?1:0;
+        Clrs=new Array('ff0000','00ff00','ffffff','ff00ff','ffa500','ffff00','00ff00','ffffff','ff00ff')
+        var amount=8
+        var step=0.3;
+        var currStep=0;
+        var Ypos=0;
+        var Xpos=0;
+        if (ns){
+        for (i=0; i < amount; i++)
+        document.write('<LAYER NAME="n'+i+'" LEFT=0 TOP=0 BGCOLOR=#FFFFFF CLIP="0,0,2,2"></LAYER>');
+        window.captureEvents(Event.MOUSEMOVE);
+        function nMouse(evnt){
+        Ypos = evnt.pageY;
+        Xpos = evnt.pageX;
+        }
+        window.onMouseMove=nMouse;
+        }
+        else{
+        document.write('<div style="position:absolute;top:0px;left:0px">');
+        document.write('<div style="position:relative">');
+        for (i=0; i < amount; i++)
+        document.write('<div id="me" style="position:absolute;top:0px;left:0px;width:2px;height:2px;font-size:2px;background:#00aaff"></div>');
+        document.write('</div></div>');
+        function iMouse(){
+        Ypos=event.y+document.body.scrollTop;
+        Xpos=event.x+document.body.scrollLeft;
+        }
+        document.onmousemove = iMouse;
+        }
+        function Comet(){
+        for (i=0; i < amount; i++){
+        var randCol=Math.floor(Math.random()*Clrs.length);
+        var layer=(document.layers)?document.layers['n'+i]:me[i].style;
+        layer.top =Ypos+60*Math.sin((currStep + i*3.1)/4)*Math.cos(currStep/10);
+        layer.left=Xpos+60*Math.cos((currStep + i*3.1)/4);
+        if (ns) layer.bgColor=Clrs[randCol];else layer.background=Clrs[randCol];
+        }
+        currStep+=step;
+        setTimeout("Comet()",10);
+        }
+        window.onload=Comet;
+        </script>
+        <style type="text/css">
+        /* CSS Document */
+        *{margin:0;padding:0;list-style:none;border:none;}
+        body{height:2000px;background:#fafafa;}
+        .totop{position:fixed;right:25px;bottom:25px;display:block;width:26px;height:62px;background:url(http://comment.bjcnc.img.sohucs.com/pq2Ad12_jpg) no-repeat 0 0;-webkit-transition: all 0.2s ease-in-out;}
+        .totop:hover{background:url(http://comment.bjcnc.img.sohucs.com/pq2Ad12_jpg) no-repeat 0 -62px;}
+        </style>
+        <script type="text/javascript" >/**
+        * JavaScript脚本实现回到页面顶部示例
+        * @param acceleration 速度
+        * @param stime 时间间隔 (毫秒)
+        **/
+        function gotoTop(acceleration,stime) {
+           acceleration = acceleration || 0.1;
+           stime = stime || 10;
+           var x1 = 0;
+           var y1 = 0;
+           var x2 = 0;
+           var y2 = 0;
+           var x3 = 0;
+           var y3 = 0;
+           if (document.documentElement) {
+               x1 = document.documentElement.scrollLeft || 0;
+               y1 = document.documentElement.scrollTop || 0;
+           }
+           if (document.body) {
+               x2 = document.body.scrollLeft || 0;
+               y2 = document.body.scrollTop || 0;
+           }
+           var x3 = window.scrollX || 0;
+           var y3 = window.scrollY || 0;
+
+           // 滚动条到页面顶部的水平距离
+           var x = Math.max(x1, Math.max(x2, x3));
+           // 滚动条到页面顶部的垂直距离
+           var y = Math.max(y1, Math.max(y2, y3));
+
+           // 滚动距离 = 目前距离 / 速度, 因为距离原来越小, 速度是大于 1 的数, 所以滚动距离会越来越小
+           var speeding = 1 + acceleration;
+           window.scrollTo(Math.floor(x / speeding), Math.floor(y / speeding));
+
+           // 如果距离不为零, 继续调用函数
+           if(x > 0 || y > 0) {
+               var run = "gotoTop(" + acceleration + ", " + stime + ")";
+               window.setTimeout(run, stime);
+           }
+        }
+        </script>
+        <script>
+        !function(e, t, a) {
+            function r() {
+                for (var e = 0; e < s.length; e++) s[e].alpha <= 0 ? (t.body.removeChild(s[e].el), s.splice(e, 1)) : (s[e].y--, s[e].scale += .004, s[e].alpha -= .013, s[e].el.style.cssText = "left:" + s[e].x + "px;top:" + s[e].y + "px;opacity:" + s[e].alpha + ";transform:scale(" + s[e].scale + "," + s[e].scale + ") rotate(45deg);background:" + s[e].color + ";z-index:99999");
+                requestAnimationFrame(r)
+            }
+            function n() {
+                var t = "function" == typeof e.onclick && e.onclick;
+                e.onclick = function(e) {
+                    t && t(),
+                        o(e)
+                }
+            }
+            function o(e) {
+                var a = t.createElement("div");
+                a.className = "heart",
+                    s.push({
+                        el: a,
+                        x: e.clientX - 5,
+                        y: e.clientY - 5,
+                        scale: 1,
+                        alpha: 1,
+                        color: c()
+                    }),
+                    t.body.appendChild(a)
+            }
+            function i(e) {
+                var a = t.createElement("style");
+                a.type = "text/css";
+                try {
+                    a.appendChild(t.createTextNode(e))
+                } catch(t) {
+                    a.styleSheet.cssText = e
+                }
+                t.getElementsByTagName("head")[0].appendChild(a)
+            }
+            function c() {
+                return "rgb(" + ~~ (255 * Math.random()) + "," + ~~ (255 * Math.random()) + "," + ~~ (255 * Math.random()) + ")"
+            }
+            var s = [];
+            e.requestAnimationFrame = e.requestAnimationFrame || e.webkitRequestAnimationFrame || e.mozRequestAnimationFrame || e.oRequestAnimationFrame || e.msRequestAnimationFrame ||
+                function(e) {
+                    setTimeout(e, 1e3 / 60)
+                },
+                i(".heart{width: 10px;height: 10px;position: fixed;background: #f00;transform: rotate(45deg);-webkit-transform: rotate(45deg);-moz-transform: rotate(45deg);}.heart:after,.heart:before{content: '';width: inherit;height: inherit;background: inherit;border-radius: 50%;-webkit-border-radius: 50%;-moz-border-radius: 50%;position: fixed;}.heart:after{top: -5px;}.heart:before{left: -5px;}"),
+                n(),
+                r()
+        } (window, document);
+    </script>
+    <p>
             <center>
                 <font size="14" color="#fafad2">
                     Hi,Welcome To LXD's Team's offical website!
@@ -22,7 +164,7 @@
         </p>
         <p>
             <center>
-                <a href="https://rawcdn.githack.com/lxdxz/lxdxz.github.io/bf325ad14325983888b396e0f1e226e58c4cf1a1/2013(4).html" target="_blank">
+                <a href="https://github.com/lxdxz/lxdxz.github.io/blob/master/2013(4).html" target="_blank">
                     <font size="8" color="#6495ed">
                         这是六四班官方网站
                     </font>
@@ -92,6 +234,13 @@
         </p>
         <br>
         <br>
+        <p>
+            <a href="https://github.com/lxdxz/lxdxz.github.io/blob/master/tanchishe.html">
+                <font size="5" color="#6495ed">
+                    在线贪吃蛇小游戏
+                </font>
+            </a>
+        </p>
         <p>
             <a href="https://rawcdn.githack.com/lxdxz/lxdxz.github.io/004df0df9cc91d536d5e71c1e8298e6f0903d1a5/spweb.py">
                 <font size="5" color="#5f9eao" face="NSimSun">
