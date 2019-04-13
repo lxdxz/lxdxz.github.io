@@ -6,56 +6,6 @@
     <body bgcolor="#7fffd4">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
         <script language="javascript">alert('欢迎来到LXDXZ官方网站！lxdxz.github.io。若想访问六四班网站，https://rawcdn.githack.com/lxdxz/lxdxz.github.io/6ef842325b53a50dc0c874bcf45c0a7e464b6f17/2013(4).html')</script>
-        <script language="JavaScript">
-        ns=(document.layers)?1:0;
-        Clrs=new Array('ff0000','00ff00','ffffff','ff00ff','ffa500','ffff00','00ff00','ffffff','ff00ff')
-        var amount=8
-        var step=0.3;
-        var currStep=0;
-        var Ypos=0;
-        var Xpos=0;
-        if (ns){
-        for (i=0; i < amount; i++)
-        document.write('<LAYER NAME="n'+i+'" LEFT=0 TOP=0 BGCOLOR=#FFFFFF CLIP="0,0,2,2"></LAYER>');
-        window.captureEvents(Event.MOUSEMOVE);
-        function nMouse(evnt){
-        Ypos = evnt.pageY;
-        Xpos = evnt.pageX;
-        }
-        window.onMouseMove=nMouse;
-        }
-        else{
-        document.write('<div style="position:absolute;top:0px;left:0px">');
-        document.write('<div style="position:relative">');
-        for (i=0; i < amount; i++)
-        document.write('<div id="me" style="position:absolute;top:0px;left:0px;width:2px;height:2px;font-size:2px;background:#00aaff"></div>');
-        document.write('</div></div>');
-        function iMouse(){
-        Ypos=event.y+document.body.scrollTop;
-        Xpos=event.x+document.body.scrollLeft;
-        }
-        document.onmousemove = iMouse;
-        }
-        function Comet(){
-        for (i=0; i < amount; i++){
-        var randCol=Math.floor(Math.random()*Clrs.length);
-        var layer=(document.layers)?document.layers['n'+i]:me[i].style;
-        layer.top =Ypos+60*Math.sin((currStep + i*3.1)/4)*Math.cos(currStep/10);
-        layer.left=Xpos+60*Math.cos((currStep + i*3.1)/4);
-        if (ns) layer.bgColor=Clrs[randCol];else layer.background=Clrs[randCol];
-        }
-        currStep+=step;
-        setTimeout("Comet()",10);
-        }
-        window.onload=Comet;
-        </script>
-        <style type="text/css">
-        /* CSS Document */
-        *{margin:0;padding:0;list-style:none;border:none;}
-        body{height:2000px;background:#fafafa;}
-        .totop{position:fixed;right:25px;bottom:25px;display:block;width:26px;height:62px;background:url(http://comment.bjcnc.img.sohucs.com/pq2Ad12_jpg) no-repeat 0 0;-webkit-transition: all 0.2s ease-in-out;}
-        .totop:hover{background:url(http://comment.bjcnc.img.sohucs.com/pq2Ad12_jpg) no-repeat 0 -62px;}
-        </style>
 		<p>
             <center>
                 <font size="14" color="#6495ed">
